@@ -1,0 +1,8 @@
+import styles from 'styled-components';
+
+
+export const Container = styles.div`
+	h1 {
+		color: red;
+	}
+`
