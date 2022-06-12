@@ -12,6 +12,12 @@ export const ArticleList = () => {
 			<ArticleItem article={article}/>
 			<ArticleItem article={article}/>
 			<ArticleItem article={article}/>
+			<ArticleItem article={article}/>
+			<ArticleItem article={article}/>
+			<ArticleItem article={article}/>
+			<ArticleItem article={article}/>
+			<ArticleItem article={article}/>
+			<ArticleItem article={article}/>
 		</S.Wrapper>
 	)
 }

@@ -6,7 +6,7 @@ export const article: Article = {
 	url: "https://loganbushey.com/tag/taylor-swift/",
 	description: "Posts about Taylor Swift written by lsbushey",
 	body: "Privacy Policy\nConsent Management\nThe use of the Internet pages of the SuperbHub is possible without any indication of personal data; however, if a data subject wants to use special enterprise services via our website, processing of personal data could become necessary.\nPrivacy Policy\nRequired\nWe are very delighted that you have shown interest in our enterprise. Data protection is of a particularly high priority for the management of the SuperbHub. The use of the Internet pages of the SuperbHub is possible without any indication of personal data; however, if a data subject wants to use special enterprise services via our website, processing of personal data could become necessary. If the processing of personal data is necessary and there is no statutory basis for such processing, we generally obtain consent from the data subject.\nGDPR",
-	snippet: "Posts about <b>Taylor</b> Swift written by lsbushey.",
+	snippet: "Mad love or bad blood?.\nEnter the email address associated with your account, and we'll email you a link to reset your password.\n*Try again or choose another option.",
 	keywords: "",
 	language: "en",
 	isSafe: true,
