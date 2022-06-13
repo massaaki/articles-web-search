@@ -33,5 +33,9 @@ export default {
 		white500: '#FBFBFB',
 		black500: '#242020'
 
+	},
+	offsets: {
+		mobile: '720px',
+		desktop: '1200px'
 	}
 }
