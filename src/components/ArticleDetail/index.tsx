@@ -1,22 +1,32 @@
 
 import Link from "next/link";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { ArticleContext } from "context/articleContext";
 import { TagCloud } from 'react-tagcloud';
+import { CountAndRemoveDuplicatedString } from "utils/count-and-remove-text-array";
 
-const data = [
-	{ value: 'JavaScript', count: 38 },
-	{ value: 'React', count: 30 },
-	{ value: 'Nodejs', count: 28 },
-	{ value: 'Express.js', count: 25 },
-	{ value: 'HTML5', count: 33 },
-	{ value: 'MongoDB', count: 18 },
-	{ value: 'CSS3', count: 20 },
-]
+type TagsType = {
+	value: string;
+	count: number;
+}
 
 export const ArticleDetail = () => {
 	const { currentArticle } = useContext(ArticleContext);
+	const [tagsData, setTagsData] = useState<TagsType[]>([])
+
+
+
+
+	useEffect(() => {
+		if (currentArticle.body) {
+			setTagsData(CountAndRemoveDuplicatedString(currentArticle.body));
+		}
+
+
+	}, [currentArticle]);
+
+
 
 	if (!currentArticle)
 		return <>Loading</>;
@@ -29,7 +39,7 @@ export const ArticleDetail = () => {
 			<TagCloud
 				minSize={12}
 				maxSize={35}
-				tags={data}
+				tags={tagsData}
 				/>
 			</div>
 
