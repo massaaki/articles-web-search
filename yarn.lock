@@ -2799,6 +2799,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-tagcloud@^1.1.7":
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/@types/react-tagcloud/-/react-tagcloud-1.1.7.tgz#dde198193bc3dc5c610bbd76d4f442230c4f0655"
+  integrity sha512-dbfJSKointDfjJm4jibuSDDCPjHGlCmBWavKMRmdD2S/xFQ0PIwMScYkbqs58ioty6OMm0Grha0xzRLUMm2OhQ==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^18.0.12":
   version "18.0.12"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.0.12.tgz#cdaa209d0a542b3fcf69cf31a03976ec4cdd8840"
@@ -9431,7 +9438,7 @@ prompts@^2.0.1, prompts@^2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.0.0, prop-types@^15.7.2, prop-types@^15.8.1:
+prop-types@^15.0.0, prop-types@^15.6.2, prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -9563,6 +9570,11 @@ randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5, randombytes@^2.1.0:
   dependencies:
     safe-buffer "^5.1.0"
 
+randomcolor@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/randomcolor/-/randomcolor-0.6.2.tgz#7a57362ae1a1278439aeed2c15e5deb8ea33f56d"
+  integrity sha512-Mn6TbyYpFgwFuQ8KJKqf3bqqY9O1y37/0jgSK/61PUxV4QfIMv0+K2ioq8DfOjkBslcjwSzRfIDEXfzA9aCx7A==
+
 randomfill@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/randomfill/-/randomfill-1.0.4.tgz#c92196fc86ab42be983f1bf31778224931d61458"
@@ -9671,6 +9683,16 @@ react-syntax-highlighter@^15.4.5:
     lowlight "^1.17.0"
     prismjs "^1.27.0"
     refractor "^3.6.0"
+
+react-tagcloud@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-tagcloud/-/react-tagcloud-2.2.0.tgz#47521be1ca640b56dce5a6a588ea22ddcfdd640a"
+  integrity sha512-5nFYetGdCUmpwTwzuJyg0/rIFkW4atssIHNXrrQNAQfENk1Tov1CNgAtFERXqTUNjgzAu/OSgDMhzOL1Zpc/lw==
+  dependencies:
+    prop-types "^15.6.2"
+    randomcolor "^0.6.2"
+    seedrandom "^3.0.5"
+    shuffle-array "^1.0.1"
 
 react@18.1.0:
   version "18.1.0"
@@ -10146,6 +10168,11 @@ schema-utils@^3.0.0, schema-utils@^3.1.0, schema-utils@^3.1.1:
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
 
+seedrandom@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/seedrandom/-/seedrandom-3.0.5.tgz#54edc85c95222525b0c7a6f6b3543d8e0b3aa0a7"
+  integrity sha512-8OwmbklUNzwezjGInmZ+2clQmExQPvomqjL7LFqOYqtmuxRgQYqOD3mHaU+MvZn5FLUeVxVfQjwLZW/n/JFuqg==
+
 "semver@2 || 3 || 4 || 5", semver@^5.4.1, semver@^5.5.0, semver@^5.6.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"
@@ -10297,6 +10324,11 @@ shebang-regex@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
+
+shuffle-array@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/shuffle-array/-/shuffle-array-1.0.1.tgz#c4ff3cfe74d16f93730592301b25e6577b12898b"
+  integrity sha512-0TFRU8zVQaLatWKr0/czo19VyPNgb/a3sBc1GAjVfivfzEGaS54vueNgtAu/8/pW7EM/VF5fwq9zgpLdGyRmVw==
 
 side-channel@^1.0.4:
   version "1.0.4"
