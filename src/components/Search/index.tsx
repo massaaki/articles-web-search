@@ -28,22 +28,24 @@ export const Search = () => {
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setTermToSearch(e.target.value);
-		if (e.target.value)
-			fetchAutocomplete();
+		if (e.target.value && e.target.value.length >= 3)
+			fetchAutocomplete(e.target.value);
 	}
 
 	const debounceSearchResults = useMemo(() => {
 		return debounce(handleChange, 500);
 	}, []);
 
-	const fetchAutocomplete = async () => {
-		const response: RecommendedTerms = await api.get('/autocomplete?text=asd');
+	const fetchAutocomplete = async (text: string) => {
+		// const response: RecommendedTerms = await api.get(`/autocomplete?text=${text}`);
+		const response: RecommendedTerms = await api.get(`/fake-autocomplete?text=${text}`);
 		setRecommendedTerms(response.data);
 	}
 
 	const fetchArticles = async () => {
 		// const response: ArticleResponse = await api.get(`/articles?search=${termToSearch}`);
 		const response: ArticleResponse = await api.get(`/fake-articles?search=${termToSearch}`);
+		console.log(response);
 
 		updateArticlesResult(response.data.value);
 		debounceSearchResults.cancel();
