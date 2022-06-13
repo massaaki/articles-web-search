@@ -64,9 +64,19 @@ export const TagsCloud = styled.div`
 	`}
 `
 
-export const Loading = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 50vh;
+export const NoContentFound = styled.div`
+	${({ theme }) => css`
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 50vh;
+		font-size: ${theme.font.sizes.medium};
+
+		a {
+			margin-top: ${theme.spacings.xsmall};
+			color: ${theme.colors.blue500};
+			text-decoration: none;
+		}
+	`}
 `
