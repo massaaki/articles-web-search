@@ -21,6 +21,7 @@ export const Content = styled.div`
 		background-repeat: no-repeat;
 		min-height: 30rem;
 		border-radius: 0.4rem;
+		cursor: pointer;
 	`}
 `
 
