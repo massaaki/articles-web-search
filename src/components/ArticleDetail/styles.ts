@@ -22,6 +22,7 @@ export const Header = styled.div`
 export const Thumb = styled.img`
 	max-width: 120rem;
 	max-height: 50rem;
+	width: 100%;
 `
 
 export const Title = styled.h2`
