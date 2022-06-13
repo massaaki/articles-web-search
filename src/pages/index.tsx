@@ -1,9 +1,10 @@
 import { Main } from "components/Main";
+import { HeaderWithSearch } from "Layout/HeaderWithSearch";
 
 export default function Home() {
   return (
     <div>
-		<h1>Web Search Articles</h1>
+		<HeaderWithSearch />
 		<Main />
     </div>
   )

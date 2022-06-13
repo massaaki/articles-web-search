@@ -29,7 +29,7 @@ export default {
 		xxlarge: '5.6rem'
 	},
 	colors: {
-		blue500: '#7481e7',
+		blue500: '#67A7F2',
 		white500: '#FBFBFB',
 		black500: '#242020'
 
