@@ -35,15 +35,26 @@ export const Search = () => {
 	}, []);
 
 	const fetchAutocomplete = async (text: string) => {
-		// const response: RecommendedTerms = await api.get(`/autocomplete?text=${text}`);
-		const response: RecommendedTerms = await api.get(`/fake-autocomplete?text=${text}`);
+		let response: RecommendedTerms;
+
+		if (process.env.NODE_ENV === 'development') {
+			response = await api.get(`/fake-autocomplete?text=${text}`);
+		} else {
+			response = await api.get(`/autocomplete?text=${text}`);
+		}
+
 		setRecommendedTerms(response.data);
 	}
 
 	const fetchArticles = async () => {
 		setLoading(true);
-		// const response: ArticleResponse = await api.get(`/articles?search=${termToSearch}`);
-		const response: ArticleResponse = await api.get(`/fake-articles?search=${termToSearch}`);
+		let response: ArticleResponse;
+
+		if (process.env.NODE_ENV === 'development') {
+			response = await api.get(`/fake-articles?search=${termToSearch}`);
+		} else {
+			response = await api.get(`/articles?search=${termToSearch}`);
+		}
 
 		updateArticlesResult(response.data.value);
 		debounceSearchResults.cancel();
