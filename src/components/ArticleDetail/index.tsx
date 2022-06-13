@@ -5,9 +5,6 @@ import { useContext } from "react";
 import { ArticleContext } from "context/articleContext";
 import { TagCloud } from 'react-tagcloud';
 
-import { article } from "components/ArticleItem/mock";
-
-
 const data = [
 	{ value: 'JavaScript', count: 38 },
 	{ value: 'React', count: 30 },
@@ -27,7 +24,7 @@ export const ArticleDetail = () => {
 	return (
 		<>
 			<h2>Article Detail</h2>
-			<p>{article.snippet}</p>
+			<p>{currentArticle.title}</p>
 			<div style={{'maxWidth': '500px'}}>
 			<TagCloud
 				minSize={12}

@@ -20,7 +20,7 @@ export const ArticleItem = ({ article }: ArticleItemProps) => {
 				<a onClick={() => { updateCurrentArticle(article) }}>
 					<S.Content style={{ background: `url(${article.image.url})` }}>
 						<S.Overlay>
-							<S.Title dangerouslySetInnerHTML={{ __html: truncateText(article.snippet, 120) }}></S.Title>
+							<S.Title dangerouslySetInnerHTML={{ __html: truncateText(article.title, 300) }}></S.Title>
 						</S.Overlay>
 					</S.Content>
 				</a>
