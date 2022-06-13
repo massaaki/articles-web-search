@@ -1,9 +1,11 @@
-import React, { useEffect, useMemo, useState, useRef } from 'react';
+import React, { useEffect, useMemo, useState, useRef, useContext } from 'react';
 import debounce from 'lodash.debounce';
 
 import { api } from 'api/v1';
 
 import { Article } from 'interfaces/article';
+import { ArticleContext } from 'context/articleContext';
+
 import { ArticleList } from 'components/ArticleList';
 
 import * as S from './styles';
@@ -20,9 +22,9 @@ export type RecommendedTerms = {
 
 export const Search = () => {
 	const [termToSearch, setTermToSearch] = useState('');
-	const [articles, setArticles] = useState<Article[]>();
 	const [recommendedTerms, setRecommendedTerms] = useState<string[]>([]);
 	const inputSearchRef = useRef<HTMLInputElement>(null);
+	const {articlesResult, updateArticlesResult} = useContext(ArticleContext);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setTermToSearch(e.target.value);
@@ -39,9 +41,12 @@ export const Search = () => {
 		setRecommendedTerms(response.data);
 	}
 
-	const fetch = async () => {
+	const fetchArticles = async () => {
 		const response: ArticleResponse = await api.get('/articles?search=asd');
-		setArticles(response.data.value);
+
+		updateArticlesResult(response.data.value);
+		debounceSearchResults.cancel();
+		setRecommendedTerms([]);
 	}
 
 	const handleRecommendedItem = (term: string) => {
@@ -69,7 +74,7 @@ export const Search = () => {
 			<S.Content>
 				<div>
 					<input ref={inputSearchRef} type="text" onChange={debounceSearchResults} />
-					<button onClick={() => fetch()}>Search</button>
+					<button onClick={() => fetchArticles()}>Search</button>
 				</div>
 				{recommendedTerms && recommendedTerms.length > 0 && (
 					<S.Recommendations>
@@ -80,7 +85,7 @@ export const Search = () => {
 				)}
 
 			</S.Content>
-			{articles && (<ArticleList articles={articles}/>)}
+			{articlesResult && (<ArticleList articles={articlesResult}/>)}
 		</S.Wrapper>
 	)
 }

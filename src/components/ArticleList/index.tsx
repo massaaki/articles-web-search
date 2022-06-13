@@ -1,9 +1,7 @@
 
-import { ArticleItem } from 'components/ArticleItem';
 import { Article } from 'interfaces/article';
 
-import { article } from '../ArticleItem/mock';
-
+import { ArticleItem } from 'components/ArticleItem';
 
 import * as S from './styles';
 
@@ -16,7 +14,7 @@ export const ArticleList = ({articles}: ArticleListProps) => {
 	return (
 		<S.Wrapper>
 			{articles.map(article => (
-				<ArticleItem key={article.id} article={article} link="#" />
+				<ArticleItem key={article.id} article={article} />
 			))}
 		</S.Wrapper>
 	)
