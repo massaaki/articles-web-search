@@ -29,33 +29,31 @@ export const ArticleDetail = () => {
 		return <>Loading</>;
 
 	return (
-		<>
-			{currentArticle.image && (
-				<S.Thumb src={`${currentArticle.image?.url || ''}`} />
-			)}
+		<S.Wrapper>
+			<S.Header>
+				{currentArticle.image && (
+					<S.Thumb src={`${currentArticle.image?.url || ''}`} />
+					)}
+			</S.Header>
+
+			<S.Container>
+				<S.Title>{currentArticle.title}</S.Title>
+
+				<S.Body dangerouslySetInnerHTML={{ __html: currentArticle.body }} />
 
 
 
-			<S.Title>{currentArticle.title}</S.Title>
-			<Link href='/'>
-				<a>
-					Back to home
-				</a>
-			</Link>
-
-			<S.Body dangerouslySetInnerHTML={{ __html: currentArticle.body }} />
-
-
-
-			<div style={{'maxWidth': '500px'}}>
-			<TagCloud
-				minSize={12}
-				maxSize={35}
-				tags={tagsData}
-				/>
-			</div>
+				<S.TagsCloud>
+					<h3>Most usage terms</h3>
+					<TagCloud
+						minSize={12}
+						maxSize={35}
+						tags={tagsData}
+						/>
+				</S.TagsCloud>
+			</S.Container>
 
 
-		</>
+		</S.Wrapper>
 	)
 }
