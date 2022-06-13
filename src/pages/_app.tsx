@@ -6,6 +6,7 @@ import { ArticleProvider } from "context/articleContext";
 
 import theme from '../styles/theme';
 import GlobalStyles from 'styles/global';
+import { Footer } from 'Layout/Footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				<ArticleProvider>
 					<Component {...pageProps} />
 				</ArticleProvider>
+				<Footer />
 			</ThemeProvider>
 		</>
   )
