@@ -11,7 +11,7 @@ import { ArticleList } from 'components/ArticleList';
 import * as S from './styles';
 
 export type ArticleResponse = {
-	data:  {
+	data: {
 		value: Article[]
 	}
 }
@@ -42,11 +42,17 @@ export const Search = () => {
 	}
 
 	const fetchArticles = async () => {
-		const response: ArticleResponse = await api.get('/articles?search=asd');
+		// const response: ArticleResponse = await api.get(`/articles?search=${termToSearch}`);
+		const response: ArticleResponse = await api.get(`/fake-articles?search=${termToSearch}`);
 
 		updateArticlesResult(response.data.value);
 		debounceSearchResults.cancel();
 		setRecommendedTerms([]);
+	}
+
+	const handleSearch = (e: React.MouseEvent<HTMLButtonElement>) => {
+		e.preventDefault();
+		fetchArticles();
 	}
 
 	const handleRecommendedItem = (term: string) => {
@@ -74,7 +80,7 @@ export const Search = () => {
 			<S.Content>
 				<div>
 					<input ref={inputSearchRef} type="text" onChange={debounceSearchResults} />
-					<button onClick={() => fetchArticles()}>Search</button>
+					<button onClick={(e) => handleSearch(e)}>Search</button>
 				</div>
 				{recommendedTerms && recommendedTerms.length > 0 && (
 					<S.Recommendations>
