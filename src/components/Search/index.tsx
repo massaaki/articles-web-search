@@ -22,7 +22,7 @@ export const Search = () => {
 	const [termToSearch, setTermToSearch] = useState('');
 	const [recommendedTerms, setRecommendedTerms] = useState<string[]>([]);
 	const inputSearchRef = useRef<HTMLInputElement>(null);
-	const {updateArticlesResult} = useContext(ArticleContext);
+	const {updateArticlesResult, setLoading} = useContext(ArticleContext);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setTermToSearch(e.target.value);
@@ -41,12 +41,15 @@ export const Search = () => {
 	}
 
 	const fetchArticles = async () => {
+		setLoading(true);
 		// const response: ArticleResponse = await api.get(`/articles?search=${termToSearch}`);
 		const response: ArticleResponse = await api.get(`/fake-articles?search=${termToSearch}`);
 
 		updateArticlesResult(response.data.value);
 		debounceSearchResults.cancel();
 		setRecommendedTerms([]);
+
+		setLoading(false);
 	}
 
 	const handleSearch = (e: React.MouseEvent<HTMLButtonElement>) => {

@@ -10,7 +10,7 @@ export type ArticleListProps = {
 }
 
 
-export const ArticleList = ({articles}: ArticleListProps) => {
+export const ArticleList = ({ articles }: ArticleListProps) => {
 	return (
 		<S.Wrapper>
 			{articles.map(article => (
