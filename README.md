@@ -1,7 +1,42 @@
-# Web Search Articles
+<h1 align="center"> Web Search Articles</h1>
 
-<h2>Sample website</h2>
-<p><a href="https://articles-web-search.vercel.app/">Access the website</a></p>
+<p align="center">
+	<img src="./images/cover.png">
+</p>
+<p  align="center">This is a page where users can search for news articles about topics of interest</p>
+<p align="center"><a href="https://articles-web-search.vercel.app/">Access the sample website</a></p>
+
+<br />
+<hr />
+<br />
+
+<h2> Features </h2>
+<h3> Recommendation terms</h3>
+<p>After write three or more letters you can see some recommendation terms</p>
+<p>
+	<img src="./images/recommendations.png">
+</p>
+
+<br />
+<h3>Most usage words in article</h3>
+<p>The application gets the boddy, counts and separate each no-repeated word and add to React-tagcloud</p>
+<p>
+	<img src="./images/most-usage-terms.png">
+</p>
+<hr />
+
+
+<h2>Dependences</h2>
+<ul>
+	<li>Next.js</li>
+	<li>Tylescript</li>
+	<li>React Context-api</li>
+	<li>Styled-components</li>
+	<li>Jest</li>
+	<li>Storybook</li>
+	<li>Eslint, Prettier && babel</li>
+</ul>
+
 
 <br />
 <h2>Getting Started</h2>
