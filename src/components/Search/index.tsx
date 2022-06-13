@@ -92,7 +92,6 @@ export const Search = () => {
 				)}
 
 			</S.Content>
-			{articlesResult && (<ArticleList articles={articlesResult}/>)}
 		</S.Wrapper>
 	)
 }

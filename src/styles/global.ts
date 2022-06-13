@@ -67,6 +67,7 @@ export const GlobalStyles: GlobalStyleComponent<{}, DefaultTheme> = createGlobal
 		body {
 			font-family: ${theme.font.family};
 			font-weight: ${theme.font.weights.regular};
+			background: ${theme.colors.white500};
 		}
 
 	`}
