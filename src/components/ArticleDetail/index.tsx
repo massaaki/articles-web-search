@@ -1,12 +1,11 @@
-
-import Link from "next/link";
 import { useContext, useEffect, useState } from "react";
-
+import Router  from 'next/router';
 import { ArticleContext } from "context/articleContext";
 import { TagCloud } from 'react-tagcloud';
 import { CountAndRemoveDuplicatedString } from "utils/count-and-remove-text-array";
 
 import * as S from './styles';
+import { Spinner } from "components/Spinner";
 
 type TagsType = {
 	value: string;
@@ -25,8 +24,17 @@ export const ArticleDetail = () => {
 
 	}, [currentArticle]);
 
-	if (!currentArticle)
-		return <>Loading</>;
+
+	useEffect(() => {
+		if(!currentArticle.body) {
+			Router.push('/');
+		}
+
+	},[currentArticle])
+
+	if (!currentArticle.body)
+		return (<S.Loading><Spinner/></S.Loading>);
+
 
 	return (
 		<S.Wrapper>
