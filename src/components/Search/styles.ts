@@ -1,9 +1,6 @@
 import styled, { css } from "styled-components";
 
-
-export const Wrapper = styled.div`
-
-`
+export const Wrapper = styled.div``
 
 export const Content = styled.div`
 	position: relative;
@@ -35,6 +32,7 @@ export const Recommendations = styled.div`
 export const Search = styled.div`
 	${({ theme }) => css`
 		margin-top: ${theme.spacings.xsmall};
+
 		input {
 			border: 1px solid ${theme.colors.blue500};
 			border-radius: 0.4rem;
@@ -42,6 +40,14 @@ export const Search = styled.div`
 			padding: ${theme.spacings.xxsmall};
 			font-size: ${theme.font.sizes.medium};
 		}
-	`}
 
+		button {
+			border: 0;
+			background: ${theme.colors.blue500};
+			color: ${theme.colors.white500};
+			padding: ${theme.spacings.xxsmall};
+			border-radius: 0.4rem;
+			cursor: pointer;
+		}
+	`}
 `
