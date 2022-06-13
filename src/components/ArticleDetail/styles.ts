@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 export const Wrapper = styled.div``;
 
 export const Container = styled.div`
-	width: 1400px;
+	max-width: 1400px;
 	margin: 0 auto;
 `
 
@@ -29,6 +29,9 @@ export const Title = styled.h2`
 		font-size: ${theme.font.sizes.xxlarge};
 		text-align: center;
 		margin: ${theme.spacings.small} 0;
+		@media(max-width: ${theme.offsets.mobile}) {
+			font-size: ${theme.font.sizes.large};
+		}
 	`}
 `
 
@@ -36,9 +39,11 @@ export const Body = styled.div`
 	${({ theme }) => css`
 		font-size: ${theme.font.sizes.medium};
 		font-weight: ${theme.font.weights.light};
+		width: 100%;
 		max-width: 800px;
 		margin: 0 auto;
 		text-align: justify;
+		padding: ${theme.spacings.small};
 	`}
 `
 
@@ -52,6 +57,9 @@ export const TagsCloud = styled.div`
 			font-size: ${theme.font.sizes.medium};
 			font-weight: ${theme.font.weights.regular};
 			color: ${theme.colors.black500};
+		}
+		.tag-cloud {
+			max-width: 100%;
 		}
 	`}
 `
