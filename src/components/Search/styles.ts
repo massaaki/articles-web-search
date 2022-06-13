@@ -29,6 +29,19 @@ export const Recommendations = styled.div`
 				}
 			}
 		}
-
 	`}
+`
+
+export const Search = styled.div`
+	${({ theme }) => css`
+		margin-top: ${theme.spacings.xsmall};
+		input {
+			border: 1px solid ${theme.colors.blue500};
+			border-radius: 0.4rem;
+			margin-right: ${theme.spacings.xxsmall};
+			padding: ${theme.spacings.xxsmall};
+			font-size: ${theme.font.sizes.medium};
+		}
+	`}
+
 `

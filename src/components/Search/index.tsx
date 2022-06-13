@@ -6,8 +6,6 @@ import { api } from 'api/v1';
 import { Article } from 'interfaces/article';
 import { ArticleContext } from 'context/articleContext';
 
-import { ArticleList } from 'components/ArticleList';
-
 import * as S from './styles';
 
 export type ArticleResponse = {
@@ -24,7 +22,7 @@ export const Search = () => {
 	const [termToSearch, setTermToSearch] = useState('');
 	const [recommendedTerms, setRecommendedTerms] = useState<string[]>([]);
 	const inputSearchRef = useRef<HTMLInputElement>(null);
-	const {articlesResult, updateArticlesResult} = useContext(ArticleContext);
+	const {updateArticlesResult} = useContext(ArticleContext);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setTermToSearch(e.target.value);
@@ -79,10 +77,10 @@ export const Search = () => {
 	return (
 		<S.Wrapper>
 			<S.Content>
-				<div>
-					<input ref={inputSearchRef} type="text" onChange={debounceSearchResults} />
+				<S.Search>
+					<input ref={inputSearchRef} type="text" onChange={debounceSearchResults} placeholder="Search for some term"/>
 					<button onClick={(e) => handleSearch(e)}>Search</button>
-				</div>
+				</S.Search>
 				{recommendedTerms && recommendedTerms.length > 0 && (
 					<S.Recommendations>
 						<ul>
@@ -90,7 +88,6 @@ export const Search = () => {
 						</ul>
 					</S.Recommendations>
 				)}
-
 			</S.Content>
 		</S.Wrapper>
 	)
