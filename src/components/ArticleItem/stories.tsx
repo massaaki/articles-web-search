@@ -7,4 +7,4 @@ export default {
 	component: ArticleItem
 } as Meta;
 
-export const Basic: Story = () => <ArticleItem article={article} />
+export const Basic: Story = () => <ArticleItem article={article} link="#" />
