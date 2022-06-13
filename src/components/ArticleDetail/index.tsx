@@ -16,14 +16,12 @@ export const ArticleDetail = () => {
 	const [tagsData, setTagsData] = useState<TagsType[]>([])
 
 	useEffect(() => {
-		if (currentArticle.body) {
+		if (currentArticle && currentArticle.body) {
 			setTagsData(CountAndRemoveDuplicatedString(currentArticle.body));
 		}
-
-
 	}, [currentArticle]);
 
-	if (!currentArticle.body)
+	if (!currentArticle?.body)
 		return (
 			<S.NoContentFound>
 				<p>

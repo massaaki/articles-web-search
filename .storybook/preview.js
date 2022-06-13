@@ -1,6 +1,17 @@
 import { GlobalStyles } from '../src/styles/global'
 import { ThemeProvider } from 'styled-components'
 import theme from '../src/styles/theme'
+import { article } from '../src/components/ArticleItem/mock';
+import { ArticleContext  } from '../src/context/articleContext';
+
+const articleContext = {
+	currentArticle: article,
+	articlesResult: [article],
+	updateCurrentArticle: () => { },
+	updateArticlesResult: () => { },
+	loading: false,
+	setLoading: () => { }
+}
 
 
 export const parameters = {
@@ -24,14 +35,15 @@ export const parameters = {
 			}
 		]
 	}
-
 }
 
 export const decorators = [
 	(Story) => (
 		<ThemeProvider theme={theme}>
-			<GlobalStyles />
-			<Story />
+			<ArticleContext.Provider value={articleContext}>
+				<GlobalStyles />
+				<Story />
+			</ArticleContext.Provider>
 		</ThemeProvider>
 	)
 ]
