@@ -17,12 +17,12 @@ const cors = initMiddleware(
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	await cors(req, res);
 
-	const { search } = req.query;
-	if (req.method === 'GET' && search) {
+	const { search, pageNumber } = req.query;
+	if (req.method === 'GET' && search && pageNumber) {
 
 		const options = {
 			method: 'GET',
-			params: { q: search, pageNumber: '1', pageSize: '10', autoCorrect: 'true' },
+			params: { q: search, pageNumber: `${pageNumber}`, pageSize: '30', autoCorrect: 'true' },
 		};
 
 		const response = await webSearchApi.request(options);

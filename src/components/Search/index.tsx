@@ -22,7 +22,8 @@ export const Search = () => {
 	const [termToSearch, setTermToSearch] = useState('');
 	const [recommendedTerms, setRecommendedTerms] = useState<string[]>([]);
 	const inputSearchRef = useRef<HTMLInputElement>(null);
-	const {updateArticlesResult, setLoading} = useContext(ArticleContext);
+	const { updateArticlesResult, setLoading } = useContext(ArticleContext);
+	const [pageNumber,] = useState(1);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setTermToSearch(e.target.value);
@@ -51,9 +52,9 @@ export const Search = () => {
 		let response: ArticleResponse;
 
 		if (process.env.NODE_ENV === 'development') {
-			response = await api.get(`/fake-articles?search=${termToSearch}`);
+			response = await api.get(`/fake-articles?search=${termToSearch}&pageNumber=${pageNumber}`);
 		} else {
-			response = await api.get(`/articles?search=${termToSearch}`);
+			response = await api.get(`/articles?search=${termToSearch}&pageNumber=${pageNumber}`);
 		}
 
 		updateArticlesResult(response.data.value);
