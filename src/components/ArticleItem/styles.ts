@@ -17,8 +17,6 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
 	${({ theme }) => css`
 		position: relative;
-		background-size: cover;
-		background-repeat: no-repeat;
 		min-height: 30rem;
 		border-radius: 0.4rem;
 		cursor: pointer;

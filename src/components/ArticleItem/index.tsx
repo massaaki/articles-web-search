@@ -18,7 +18,7 @@ export const ArticleItem = ({ article }: ArticleItemProps) => {
 		<S.Wrapper>
 			<Link href={`/article`} >
 				<a onClick={() => { updateCurrentArticle(article) }}>
-					<S.Content style={{ background: `url(${article.image.url})` }}>
+					<S.Content style={{ background: `url(${article.image.url})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
 						<S.Overlay>
 							<S.Title dangerouslySetInnerHTML={{ __html: truncateText(article.title, 300) }}></S.Title>
 						</S.Overlay>

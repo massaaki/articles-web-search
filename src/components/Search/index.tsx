@@ -45,7 +45,6 @@ export const Search = () => {
 	const fetchArticles = async () => {
 		// const response: ArticleResponse = await api.get(`/articles?search=${termToSearch}`);
 		const response: ArticleResponse = await api.get(`/fake-articles?search=${termToSearch}`);
-		console.log(response);
 
 		updateArticlesResult(response.data.value);
 		debounceSearchResults.cancel();
