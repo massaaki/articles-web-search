@@ -9,7 +9,7 @@ export const CountAndRemoveDuplicatedString = (text: string): ResponseType => {
 	const array = text.split(' ');
 
 	const results = array.reduce((r: { [key: string]: number }, s) => {
-		const key = s[0].toUpperCase() + s.substring(1).toLowerCase();
+		const key = s.toLowerCase()
 
 		r[key] = (r[key] || 0) + 1;
 
@@ -23,11 +23,8 @@ export const CountAndRemoveDuplicatedString = (text: string): ResponseType => {
 		value: key,
 		count: counts[index]
 	}))
-
-
-
 		return result;
-	} catch {
+	} catch (error) {
 		return []
 	}
 }
